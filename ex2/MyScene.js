@@ -59,28 +59,28 @@ class MyScene extends CGFscene {
         this.loadIdentity();
         // Apply transformations corresponding to the camera position relative to the origin
         this.applyViewMatrix();
-        
+
         // Draw axis
         if (this.displayAxis)
             this.axis.display();
 
         this.setDefaultAppearance();
-		
-                    
+
+
 
         var sca = [this.scaleFactor, 0.0, 0.0, 0.0,
                     0.0, this.scaleFactor, 0.0, 0.0,
                     0.0, 0.0, this.scaleFactor, 0.0,
                     0.0, 0.0, 0.0, 1.0];
-					
+
 		this.multMatrix(sca);
-		
+
 		var move = [1, 0.0, 0.0, 0.0,
 					0.0, 1, 0.0, 0.0,
 					0.0, 0.0, 1, 0.0,
 					-2.0, 4.0, 0.0, 1.0];
-						
-		
+
+
 		 // ---- BEGIN Primitive drawing section
 		//tronco
 		this.pushMatrix();
@@ -88,10 +88,12 @@ class MyScene extends CGFscene {
 		this.rotate(-Math.PI*3/4,0,0,1);
 		this.trianglebig.display();
 		this.popMatrix();
-		
+
 		//cabeça
 		this.pushMatrix();
 		this.multMatrix(move);
+    this.translate(0.5,0.5,0);
+    this.rotate(Math.PI*5/36,0,0,1);
 		if (this.displayDiamond)
 		    this.diamond.display();
 		this.popMatrix();
@@ -101,10 +103,10 @@ class MyScene extends CGFscene {
 		this.rotate(Math.PI*0.25,0,0,1);
 		this.trianglebig.display();
 		this.popMatrix();
-		
+
        //LEGS1
 	   this.pushMatrix();
-	   
+
 	   this.scale(-1,1,1);
 	   this.rotate(Math.PI/2,0,0,1);
 	   this.translate(-1.9,0,0);
@@ -116,24 +118,26 @@ class MyScene extends CGFscene {
        this.pushMatrix();
 	   this.translate(2.9,3,0);
 	   this.rotate(Math.PI/2,0,0,1);
-	   
+
 	  	if (this.displayTri)
 		    this.triangle.display();
 		this.popMatrix();
-	
-	
+
+
 	//pes
 		this.pushMatrix();
-		this.translate(6,1.5,0);
+		this.translate(6,1.8,0);
 		this.rotate(Math.PI/4,0,0,1);
 	    this.trianglesmall.display();
 		this.popMatrix();
-		/*
+
 		this.pushMatrix();
-		this.rotate(Math.PI/4,0,0,1);
+    this.translate(-2.3,.001,0);
+    this.rotate(-0.75*Math.PI,0,0,1);
+
+
 	    this.trianglesmall.display();
 		this.popMatrix();
-	*/
 
         // ---- END Primitive drawing section
     }
