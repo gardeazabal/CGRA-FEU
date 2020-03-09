@@ -43,7 +43,7 @@ scene.trianglesmall= new MyTriangleSmall(scene);
 	//cabeça
 	this.scene.pushMatrix();
 	this.scene.multMatrix(move);
-	this.scene.translate(0.5,0.5,0);
+	this.scene.translate(0.3,0.3,0);
 	this.scene.rotate(Math.PI*5/36,0,0,1);
 
 			this.scene.diamond.display();
