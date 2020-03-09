@@ -22,7 +22,7 @@ class MyParallelogram extends CGFobject {
 			2,1,0,
 			0,2,3,
 			3,2,0
-	
+
 		];
 
 		//The defined indices (and corresponding vertices)
@@ -32,4 +32,3 @@ class MyParallelogram extends CGFobject {
 		this.initGLBuffers();
 	}
 }
-

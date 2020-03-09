@@ -21,18 +21,21 @@ class MyScene extends CGFscene {
 
         //Initialize scene objects
         this.axis = new CGFaxis(this);
+/*
         this.diamond = new MyDiamond(this);
 	this.triangle = new MyTriangle(this);
 	this.Parallelogram = new MyParallelogram(this);
 	this.trianglebig = new MyTriangleBig(this);
-	this.trianglesmall= new MyTriangleSmall(this);
-
+	this.trianglesmall= new MyTriangleSmall(this);*/
+  this.tangram = new MyTangram(this);
         //Objects connected to MyInterface
         this.displayAxis = true;
         this.scaleFactor = 1;
-	this.displayTri= true;
-	this.displayDiamond = true;
-	this.displayParallelogram=true;
+      this.displayTangram=true;
+        /*this.displayTri=true;
+        this.displayDiamond=true;
+        this.displayParallelogram=true;*/
+
     }
     initLights() {
         this.lights[0].setPosition(15, 2, 5, 1);
@@ -49,8 +52,9 @@ class MyScene extends CGFscene {
         this.setSpecular(0.2, 0.4, 0.8, 1.0);
         this.setShininess(10.0);
     }
+
     display() {
-        // ---- BEGIN Background, camera and axis setup
+        /*// ---- BEGIN Background, camera and axis setup
         // Clear image and depth buffer everytime we update the scene
         this.gl.viewport(0, 0, this.gl.canvas.width, this.gl.canvas.height);
         this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
@@ -73,13 +77,19 @@ class MyScene extends CGFscene {
                     0.0, 0.0, this.scaleFactor, 0.0,
                     0.0, 0.0, 0.0, 1.0];
 
-		this.multMatrix(sca);
-
+		this.multMatrix(sca);*/
+/*
 		var move = [1, 0.0, 0.0, 0.0,
 					0.0, 1, 0.0, 0.0,
 					0.0, 0.0, 1, 0.0,
 					-2.0, 4.0, 0.0, 1.0];
 
+
+*/
+if(this.displayTangram)
+  this.Tangram.display();
+
+/*
 
 		 // ---- BEGIN Primitive drawing section
 		//tronco
@@ -116,6 +126,7 @@ class MyScene extends CGFscene {
 
 		//legs2
        this.pushMatrix();
+
 	   this.translate(2.9,3,0);
 	   this.rotate(Math.PI/2,0,0,1);
 
@@ -140,5 +151,7 @@ class MyScene extends CGFscene {
 		this.popMatrix();
 
         // ---- END Primitive drawing section
-    }
+    }*/
+}
+
 }
