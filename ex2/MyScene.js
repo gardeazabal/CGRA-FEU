@@ -20,6 +20,7 @@ class MyScene extends CGFscene {
         this.gl.depthFunc(this.gl.LEQUAL);
 
         //Initialize scene objects
+        this.tangram= new MyTangram(this);
         this.axis = new CGFaxis(this);
 /*
         this.diamond = new MyDiamond(this);
@@ -54,7 +55,7 @@ class MyScene extends CGFscene {
     }
 
     display() {
-        /*// ---- BEGIN Background, camera and axis setup
+        // ---- BEGIN Background, camera and axis setup
         // Clear image and depth buffer everytime we update the scene
         this.gl.viewport(0, 0, this.gl.canvas.width, this.gl.canvas.height);
         this.gl.clear(this.gl.COLOR_BUFFER_BIT | this.gl.DEPTH_BUFFER_BIT);
@@ -77,17 +78,18 @@ class MyScene extends CGFscene {
                     0.0, 0.0, this.scaleFactor, 0.0,
                     0.0, 0.0, 0.0, 1.0];
 
-		this.multMatrix(sca);*/
-/*
+		this.multMatrix(sca);
+
 		var move = [1, 0.0, 0.0, 0.0,
 					0.0, 1, 0.0, 0.0,
 					0.0, 0.0, 1, 0.0,
 					-2.0, 4.0, 0.0, 1.0];
 
 
-*/
+
 if(this.displayTangram)
-  this.Tangram.display();
+  this.tangram.display();
+
 
 /*
 
