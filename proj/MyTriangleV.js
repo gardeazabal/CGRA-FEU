@@ -8,11 +8,11 @@ class MyTriangleV extends CGFobject{
 	initBuffers() {
 		this.vertices = [
 			0, 0, 0,
-			0.8, 0, 0,
+			2, 0, 0,
 			0, 2.0, 0,
 
 			0, 0, 0,
-			0.8, 0, 0,
+			2, 0, 0,
 			0, 2.0, 0
 		];
 
@@ -24,6 +24,11 @@ class MyTriangleV extends CGFobject{
 			2, 1, 0
 		];
 
+		this.texCoords = [
+			0, 0,
+			0, 1,
+			1, 0
+		]
 
 		this.normals = [];
 		this.normals.push(0, 0, 1);

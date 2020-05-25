@@ -44,9 +44,11 @@ class MyCylinder extends CGFobject {
           }
         }
         this.normals.push(x, y, z);
+        this.texCoords.push(face/this.faces, h/10.0);
       }
 
       theta += theta;
+
     }
 
     this.primitiveType = this.scene.gl.TRIANGLES;
